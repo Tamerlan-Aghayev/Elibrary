@@ -1,0 +1,38 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '2.7.12'
+    id 'io.spring.dependency-management' version '1.0.15.RELEASE'
+}
+
+group = 'com.company' // Update with your desired group/package name
+
+repositories {
+    mavenCentral()
+}
+
+subprojects {
+    apply plugin: 'java'
+    apply plugin: 'org.springframework.boot'
+    apply plugin: 'io.spring.dependency-management'
+
+}
+bootJar {
+    enabled = false // Disable the default bootJar task
+}
+//configure(subprojects.findAll { it.name == 'ELibraryDB' }) {
+//    bootJar {
+//        // Configure module1's mainClassName
+//        manifest {
+//            attributes 'Main-Class': 'com.example.ELibraryDB.ELibraryDbApplication'
+//        }
+//    }
+//}
+//
+//configure(subprojects.findAll { it.name == 'ELibraryREST' }) {
+//    bootJar {
+//        // Configure module2's mainClassName
+//        manifest {
+//            attributes 'Main-Class': 'com.example.ElibraryREST.ELibraryRestApplication'
+//        }
+//    }
+//}

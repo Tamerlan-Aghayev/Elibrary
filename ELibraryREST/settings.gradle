@@ -1,0 +1,2 @@
+rootProject.name = 'ELibraryREST'
+include 'ELibraryDB'
