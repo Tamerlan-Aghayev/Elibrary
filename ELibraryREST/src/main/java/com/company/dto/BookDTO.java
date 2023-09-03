@@ -1,35 +1,30 @@
 package com.company.dto;
 
+
 import com.company.entity.BookEntity;
-
-
 
 public class BookDTO {
     private int id;
     private String name;
 
+    private String status;
 
-    private String authorName;
-    private String authorSurname;
-    private int authorBirthYear;
+    private String author;
 
-    private String authorNationality;
-    private String authorCountry;
     private String libraryName;
     private String libraryAddress;
+    private MemberDTO memberDTO;
     public BookDTO(){
 
     }
     public BookDTO(BookEntity book){
-        this.authorBirthYear=book.getAuthorByAuthorId().getBirthYear();
+        this.author=book.getAuthor();
+        this.status=book.getStatus();
         this.id=book.getId();
-        this.authorCountry=book.getAuthorByAuthorId().getNationalityByCountryId().getCountry();
         this.libraryAddress=book.getLibraryByLibraryId().getAddress();
-        this.authorName=book.getAuthorByAuthorId().getName();
         this.name=book.getName();
-        this.authorSurname=book.getAuthorByAuthorId().getSurname();
         this.libraryName=book.getLibraryByLibraryId().getName();
-        this.authorNationality=book.getAuthorByAuthorId().getNationalityByNationalityId().getNationality();
+        this.memberDTO=new MemberDTO(book.getUserByUserId());
     }
     public int getId() {
         return id;
@@ -49,45 +44,6 @@ public class BookDTO {
 
 
 
-    public String getAuthorName() {
-        return authorName;
-    }
-
-    public void setAuthorName(String authorName) {
-        this.authorName = authorName;
-    }
-
-    public String getAuthorSurname() {
-        return authorSurname;
-    }
-
-    public void setAuthorSurname(String authorSurname) {
-        this.authorSurname = authorSurname;
-    }
-
-    public int getAuthorBirthYear() {
-        return authorBirthYear;
-    }
-
-    public void setAuthorBirthYear(int authorBirthYear) {
-        this.authorBirthYear = authorBirthYear;
-    }
-
-    public String getNationality() {
-        return authorNationality;
-    }
-
-    public void setNationality(String nationality) {
-        this.authorNationality = nationality;
-    }
-
-    public String getCountry() {
-        return authorCountry;
-    }
-
-    public void setCountry(String country) {
-        this.authorCountry = country;
-    }
 
     public String getLibraryName() {
         return libraryName;
@@ -106,6 +62,19 @@ public class BookDTO {
     }
 
 
+    public String getStatus() {
+        return status;
+    }
 
+    public void setStatus(String status) {
+        this.status = status;
+    }
 
+    public String getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
 }

@@ -1,10 +1,8 @@
 package com.company.controller;
 
 import com.company.dto.LibraryDTO;
-import com.company.dto.NationalityDTO;
 import com.company.dto.ResponseDTO;
 import com.company.entity.LibraryEntity;
-import com.company.entity.NationalityEntity;
 import com.company.service.LibraryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -37,7 +35,7 @@ public class LibraryController {
 
         return ResponseEntity.ok(response);
     }
-    @GetMapping("/libraryName")
+    @GetMapping("/library_name")
     public ResponseEntity<ResponseDTO> getLibraryByName(@RequestParam("name")String name){
         try {
             LibraryEntity library = libraryService.getByName(name);
@@ -48,7 +46,7 @@ public class LibraryController {
             return ResponseEntity.ok(ResponseDTO.of( "error"));
         }
     }
-    @GetMapping("/libraryAddress")
+    @GetMapping("/library_address")
     public ResponseEntity<ResponseDTO> getLibraryByAddress(@RequestParam("address")String address){
         try {
             LibraryEntity library = libraryService.getByAddress(address);
@@ -62,19 +60,21 @@ public class LibraryController {
     @PostMapping("/library")
     public ResponseEntity<String> addLibrary(LibraryDTO libraryDTO){
         try {
-            LibraryEntity library = new LibraryEntity();
-            library.setAddress(libraryDTO.getAddress());
-            library.setName(libraryDTO.getName());
-            libraryService.addLibrary(library);
+            LibraryEntity library=new LibraryEntity();
+            library.setPassword(libraryDTO.getPassword());
+            library.setEmail(library.getEmail());
+            library.setAddress(library.getAddress());
+            library.setName(library.getName());
             return ResponseEntity.ok("success");
         }catch (Exception ex){
             ex.printStackTrace();
             return ResponseEntity.ok("error");
         }
     }
-    @DeleteMapping("/libraryName")
+    @DeleteMapping("/library")
     public ResponseEntity<String> deleteLibraryByName(@RequestParam("name") String name){
         try{
+
             libraryService.deleteLibraryByName(name);
             return ResponseEntity.ok("success");
         }catch (Exception ex){
@@ -82,14 +82,5 @@ public class LibraryController {
             return ResponseEntity.ok("failure");
         }
     }
-    @DeleteMapping("/libraryAddress")
-    public ResponseEntity<String> deleteLibraryByAddress(@RequestParam("address") String address){
-        try{
-            libraryService.deleteLibraryByAddress(address);
-            return ResponseEntity.ok("success");
-        }catch (Exception ex){
-            ex.printStackTrace();
-            return ResponseEntity.ok("failure");
-        }
-    }
+
 }
