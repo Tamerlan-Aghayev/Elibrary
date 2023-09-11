@@ -9,8 +9,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class UserDTO {
+    private int id;
     private String name;
     private String surname;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     private String fin;
     private String username;
     private String address;
@@ -18,14 +28,22 @@ public class UserDTO {
 
     List <BookDTO> books=new ArrayList<>();
 
+    public List<BookDTO> getBooks() {
+        return books;
+    }
+
+    public void setBooks(List<BookDTO> books) {
+        this.books = books;
+    }
+
     public UserDTO(UserEntity entity){
+        this.id=entity.getId();
         this.name= entity.getName();
         this.surname= entity.getSurname();
         this.address=entity.getAddress();
         this.fin=entity.getFin();
         this.username=entity.getUsername();
         this.address=entity.getAddress();
-        this.password=entity.getPassword();
 
 //        List<UserLibraryEntity> userLibraryEntities=entity.getUserLibrariesById();
 //        for(int i=0;i<userLibraryEntities.size();i++) {
@@ -34,8 +52,10 @@ public class UserDTO {
 //            libs.add(lib);
 //        }
         List<BookEntity> bookEntities=entity.getBooksById();
-        for(BookEntity bookEntity:bookEntities){
-            books.add(new BookDTO(bookEntity));
+        if(bookEntities!=null) {
+            for (BookEntity bookEntity : bookEntities) {
+                books.add(new BookDTO(bookEntity));
+            }
         }
 
     }

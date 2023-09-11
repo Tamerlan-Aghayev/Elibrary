@@ -12,4 +12,6 @@ public interface LibraryRepository extends JpaRepository<LibraryEntity, Integer>
     LibraryEntity findByName(@Param("name") String name);
     @Query("Select b from LibraryEntity b where b.address=:address")
     LibraryEntity findByAddress ( @Param("address") String address);
+    @Query("Select b from LibraryEntity b where b.email=:email")
+    LibraryEntity findByEmail( @Param("email") String email);
 }

@@ -19,9 +19,7 @@ public class BookService {
     @Autowired
     private BookRepository bookRepository;
 
-    public BookEntity getByName(String name){
-        return bookRepository.findByName(name);
-    }
+
     public BookEntity getByNameByLibrary(String name, LibraryEntity library){
         return bookRepository.findByName(name, library);
     }

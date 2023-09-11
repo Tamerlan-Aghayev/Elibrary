@@ -17,5 +17,9 @@ public interface UserRepository extends JpaRepository<UserEntity, Integer> {
 
     @Query("SELECT u FROM UserEntity u JOIN FETCH u.userLibrariesById ul JOIN FETCH ul.libraryByLibraryId where ul.libraryByLibraryId=:library")
     List<UserEntity> getAll(@Param("library")LibraryEntity library);
+    @Query("SELECT u FROM UserEntity u JOIN FETCH u.userLibrariesById ul JOIN FETCH ul.libraryByLibraryId where u.fin=:fin and u.name=:name and u.surname=:surname and u.username=:username and u.address=:address")
+    UserEntity getByFin(@Param("name")String name, @Param("surname")String surname, @Param("username")String username, @Param("fin")String fin, @Param("address")String address);
+    @Query("select u from UserEntity u  JOIN FETCH u.userLibrariesById ul JOIN FETCH ul.libraryByLibraryId where u.username=:username")
+    public UserEntity getUserByUsername(@Param("username")String username);
 
 }

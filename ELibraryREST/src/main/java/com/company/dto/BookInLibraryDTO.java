@@ -1,9 +1,8 @@
 package com.company.dto;
 
-
 import com.company.entity.BookEntity;
 
-public class BookDTO {
+public class BookInLibraryDTO {
     private int id;
     private String name;
 
@@ -13,19 +12,17 @@ public class BookDTO {
 
     private String libraryName;
     private String libraryAddress;
-    private MemberDTO memberDTO;
-    public BookDTO(){
+
+    public BookInLibraryDTO(){
 
     }
-    public BookDTO(BookEntity book){
-        this.author=book.getAuthor();
-        this.status=book.getStatus();
-        this.id=book.getId();
-        this.libraryAddress=book.getLibraryByLibraryId().getAddress();
-        this.name=book.getName();
-        this.libraryName=book.getLibraryByLibraryId().getName();
-        if(this.memberDTO!=null)
-            this.memberDTO=new MemberDTO(book.getUserByUserId());
+    public BookInLibraryDTO(BookEntity book) {
+        this.author = book.getAuthor();
+        this.status = book.getStatus();
+        this.id = book.getId();
+        this.libraryAddress = book.getLibraryByLibraryId().getAddress();
+        this.name = book.getName();
+        this.libraryName = book.getLibraryByLibraryId().getName();
     }
     public int getId() {
         return id;
@@ -73,14 +70,6 @@ public class BookDTO {
 
     public String getAuthor() {
         return author;
-    }
-
-    public MemberDTO getMemberDTO() {
-        return memberDTO;
-    }
-
-    public void setMemberDTO(MemberDTO memberDTO) {
-        this.memberDTO = memberDTO;
     }
 
     public void setAuthor(String author) {

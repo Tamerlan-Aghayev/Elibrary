@@ -7,21 +7,30 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class LibraryDTO {
+    private int id;
+    private String name;
+    private String address;
+    private String email;
+
+    private List<BookInLibraryDTO> books;
+    public LibraryDTO(){}
+
     public LibraryDTO(LibraryEntity library) {
         this.id = library.getId();
         this.name = library.getName();
         this.address = library.getAddress();
-        this.email=library.getEmail();
-        this.password=library.getPassword();
-        List<BookEntity> list =library.getBooksById();
+        this.email = library.getEmail();
 
-        List<BookDTO> dto= new ArrayList<>();
+        List<BookEntity> list = library.getBooksById();
+        if (list != null) {
+            List<BookInLibraryDTO> dto = new ArrayList<>();
 
-        for(BookEntity l:list){
-            dto.add(new BookDTO(l));
+            for (BookEntity l : list) {
+                dto.add(new BookInLibraryDTO(l));
 
+            }
+            this.books = dto;
         }
-        this.books=dto;
     }
 
     public int getId() {
@@ -48,17 +57,15 @@ public class LibraryDTO {
         this.address = address;
     }
 
-    public List<BookDTO> getBooks() {
+    public List<BookInLibraryDTO> getBooks() {
         return books;
     }
 
-    public void setBooks(List<BookDTO> books) {
+    public void setBooks(List<BookInLibraryDTO> books) {
         this.books = books;
     }
 
-    private int id;
-    private String name;
-    private String address;
+
 
     public String getEmail() {
         return email;
@@ -68,16 +75,7 @@ public class LibraryDTO {
         this.email = email;
     }
 
-    public String getPassword() {
-        return password;
-    }
 
-    public void setPassword(String password) {
-        this.password = password;
-    }
 
-    private String email;
-    private String password;
-    private List<BookDTO> books;
 
 }

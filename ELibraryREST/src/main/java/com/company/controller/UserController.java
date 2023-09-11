@@ -1,5 +1,6 @@
 package com.company.controller;
 
+import com.company.data.UserLibraryData;
 import com.company.dto.LibraryDTO;
 import com.company.dto.ResponseDTO;
 import com.company.dto.UserDTO;
@@ -45,38 +46,34 @@ public class UserController {
         UserDTO dto = new UserDTO(user);
 
         return ResponseEntity.ok(ResponseDTO.of(dto));
-    };
+    }
 
     @PostMapping("/user")
-    public ResponseEntity<ResponseDTO> addUser(@RequestBody UserDTO userDTO ,@RequestBody LibraryDTO libraryDTO){
+    public ResponseEntity<ResponseDTO> addUser(@RequestBody UserLibraryData userLibraryData){
+        LibraryDTO libraryDTO=userLibraryData.library;
+        UserDTO userDTO=userLibraryData.user;
         LibraryEntity library = libraryService.getByName(libraryDTO.getName());
-        UserEntity userEntity=new UserEntity(userDTO.getName(),userDTO.getSurname(), userDTO.getFin(), userDTO.getUsername(), userDTO.getAddress(), userDTO.getPassword());
-        userLibraryService.add(userEntity, library);
+        userService.addUser(userDTO.getName(),userDTO.getSurname(), userDTO.getUsername(), userDTO.getFin(), userDTO.getAddress(), library);
+
+
+        return ResponseEntity.ok(ResponseDTO.of("success"));
+    }
+    @PostMapping("/registration")
+    public ResponseEntity<ResponseDTO> registerUser(@RequestBody UserDTO userDTO, @RequestParam("password") String password){
+
+        userService.registerUser(new UserEntity(userDTO.getName(),userDTO.getSurname(), userDTO.getFin(),userDTO.getUsername(), userDTO.getAddress()), password);
+
 
         return ResponseEntity.ok(ResponseDTO.of("success"));
     }
 
-//}@GetMapping("/user")
-//public ResponseEntity<ResponseDTO> getUsers(@RequestBody LibraryEntity library){
-//
-//    List<UserEntity> list=userService.getALL(library);
-//    List<UserDTO> dto=new ArrayList<>();
-//    for(UserEntity u:list){
-//        dto.add(new UserDTO(u));
-//    }
-//
-//    return ResponseEntity.ok(ResponseDTO.of(dto));
-//}@GetMapping("/users")
-//public ResponseEntity<ResponseDTO> getUsers(@RequestBody LibraryEntity library){
-//
-//    List<UserEntity> list=userService.getALL(library);
-//    List<UserDTO> dto=new ArrayList<>();
-//    for(UserEntity u:list){
-//        dto.add(new UserDTO(u));
-//    }
-//
-//    return ResponseEntity.ok(ResponseDTO.of(dto));
-//}
+    @DeleteMapping("/user")
+    public ResponseEntity<ResponseDTO> deleteUser(@RequestParam("name") String name, @RequestParam("surname") String surname,@RequestBody LibraryDTO libraryDTO){
+        LibraryEntity library = libraryService.getByName(libraryDTO.getName());
+        UserEntity userEntity=userService.getUser(name, surname, library);
+        userLibraryService.delete(userEntity, library);
+        return ResponseEntity.ok(ResponseDTO.of("success"));
+    }
 
 
 }

@@ -26,13 +26,15 @@ public class UserEntity {
     @Basic
     @Column(name = "address")
     private String address;
-    @Basic
-    @Column(name = "password")
-    private String password;
+
     @OneToMany(mappedBy = "userByUserId")
     private List<BookEntity> booksById;
     @OneToMany(mappedBy = "userByUserId")
     private List<UserLibraryEntity> userLibrariesById;
+
+    public UserEntity() {
+
+    }
 
     public int getId() {
         return id;
@@ -40,6 +42,14 @@ public class UserEntity {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public UserEntity(String name, String surname, String fin, String username, String address) {
+        this.name = name;
+        this.surname = surname;
+        this.fin = fin;
+        this.username = username;
+        this.address = address;
     }
 
     public String getName() {
@@ -82,25 +92,19 @@ public class UserEntity {
         this.address = address;
     }
 
-    public String getPassword() {
-        return password;
-    }
 
-    public void setPassword(String password) {
-        this.password = password;
-    }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         UserEntity that = (UserEntity) o;
-        return id == that.id && Objects.equals(name, that.name) && Objects.equals(surname, that.surname) && Objects.equals(fin, that.fin) && Objects.equals(username, that.username) && Objects.equals(address, that.address) && Objects.equals(password, that.password);
+        return id == that.id && Objects.equals(name, that.name) && Objects.equals(surname, that.surname) && Objects.equals(fin, that.fin) && Objects.equals(username, that.username) && Objects.equals(address, that.address) ;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, surname, fin, username, address, password);
+        return Objects.hash(id, name, surname, fin, username, address);
     }
 
     public List<BookEntity> getBooksById() {

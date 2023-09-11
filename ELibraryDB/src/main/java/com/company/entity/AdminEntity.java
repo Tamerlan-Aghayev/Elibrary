@@ -22,9 +22,7 @@ public class AdminEntity {
     @Basic
     @Column(name = "address")
     private String address;
-    @Basic
-    @Column(name = "password")
-    private String password;
+
 
     public int getId() {
         return id;
@@ -66,24 +64,17 @@ public class AdminEntity {
         this.address = address;
     }
 
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         AdminEntity that = (AdminEntity) o;
-        return id == that.id && Objects.equals(name, that.name) && Objects.equals(surname, that.surname) && Objects.equals(username, that.username) && Objects.equals(address, that.address) && Objects.equals(password, that.password);
+        return id == that.id && Objects.equals(name, that.name) && Objects.equals(surname, that.surname) && Objects.equals(username, that.username) && Objects.equals(address, that.address);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, surname, username, address, password);
+        return Objects.hash(id, name, surname, username, address);
     }
 }

@@ -21,9 +21,7 @@ public class LibraryEntity {
     @Basic
     @Column(name = "email")
     private String email;
-    @Basic
-    @Column(name = "password")
-    private String password;
+
     @OneToMany(mappedBy = "libraryByLibraryId")
     private List<BookEntity> booksById;
     @OneToMany(mappedBy = "libraryByLibraryId")
@@ -61,25 +59,19 @@ public class LibraryEntity {
         this.email = email;
     }
 
-    public String getPassword() {
-        return password;
-    }
 
-    public void setPassword(String password) {
-        this.password = password;
-    }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         LibraryEntity that = (LibraryEntity) o;
-        return id == that.id && Objects.equals(name, that.name) && Objects.equals(address, that.address) && Objects.equals(email, that.email) && Objects.equals(password, that.password);
+        return id == that.id && Objects.equals(name, that.name) && Objects.equals(address, that.address) && Objects.equals(email, that.email);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, address, email, password);
+        return Objects.hash(id, name, address, email);
     }
 
     public List<BookEntity> getBooksById() {

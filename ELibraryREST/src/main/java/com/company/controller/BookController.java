@@ -1,5 +1,6 @@
 package com.company.controller;
 
+import com.company.data.BookLibraryData;
 import com.company.dto.BookDTO;
 import com.company.dto.LibraryDTO;
 import com.company.dto.ResponseDTO;
@@ -23,40 +24,32 @@ public class BookController {
     private LibraryService libraryService;
     private ResponseDTO response=new ResponseDTO();
     @GetMapping("/books")
-    public ResponseEntity<ResponseDTO> getBooks(@RequestBody LibraryEntity library){
-        List<BookEntity> bookEntities=library.getBooksById();
+    public ResponseEntity<ResponseDTO> getBooks(@RequestBody LibraryDTO library){
+        List<BookEntity> bookEntities=libraryService.getByName(library.getName()).getBooksById();
         List<BookDTO> dtos=new ArrayList<>();
         for(BookEntity book:bookEntities){
             dtos.add(new BookDTO(book));
         }
         return ResponseEntity.ok(ResponseDTO.of(dtos, "success"));
     }
-    @GetMapping("/book/{name}")
-    public ResponseEntity<ResponseDTO> getBookByName(@PathVariable("name") String name){
 
-        try{
-            response=ResponseDTO.of(new BookDTO(bookService.getByName(name)), "successful");
-        }catch (Exception ex){
-            ex.printStackTrace();
-            response=ResponseDTO.of("error occurred");
-        }
-        return ResponseEntity.ok(response);
-    }
     @GetMapping("/book")
-    public ResponseEntity<ResponseDTO> getBookByNameByLibrary(@RequestParam("name") String name, @RequestBody LibraryEntity library){
+    public ResponseEntity<ResponseDTO> getBookByName(@RequestParam("name") String name, @RequestBody LibraryDTO dto){
 
         try{
-            response=ResponseDTO.of(new BookDTO(bookService.getByNameByLibrary(name, library)), "successful");
+            response=ResponseDTO.of(new BookDTO(bookService.getByNameByLibrary(name, libraryService.getByName(dto.getName()))), "successful");
         }catch (Exception ex){
             ex.printStackTrace();
             response=ResponseDTO.of("error occurred");
         }
         return ResponseEntity.ok(response);
     }
+
 
     @PostMapping("/book")
-    public ResponseEntity<ResponseDTO> addBook(@RequestBody BookDTO book, @RequestBody LibraryDTO dto){
-
+    public ResponseEntity<ResponseDTO> addBook(@RequestBody BookLibraryData bookLibraryData){
+        BookDTO book=bookLibraryData.book;
+        LibraryDTO dto=bookLibraryData.library;
         try{
             BookEntity result=new BookEntity();
             result.setName(book.getName());
@@ -75,10 +68,10 @@ public class BookController {
     }
 
     @DeleteMapping("/book")
-    public ResponseEntity<ResponseDTO> deleteBook(@RequestParam("name") String name, @RequestBody LibraryEntity library){
+    public ResponseEntity<ResponseDTO> deleteBook(@RequestParam("name") String name, @RequestBody LibraryDTO library){
 
         try{
-            bookService.deleteBook(name,library );
+            bookService.deleteBook(name,libraryService.getByName(library.getName()) );
             response=ResponseDTO.of( "successful");
         }catch (Exception ex){
             ex.printStackTrace();

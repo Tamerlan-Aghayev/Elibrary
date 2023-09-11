@@ -17,12 +17,7 @@ public class UserLibraryEntity {
     @ManyToOne
     @JoinColumn(name = "library_id", referencedColumnName = "id", nullable = false)
     private LibraryEntity libraryByLibraryId;
-    @Basic
-    @Column(name = "user_id")
-    private int userId;
-    @Basic
-    @Column(name = "library_id")
-    private int libraryId;
+
 
     public int getId() {
         return id;
@@ -61,19 +56,5 @@ public class UserLibraryEntity {
         this.libraryByLibraryId = libraryByLibraryId;
     }
 
-    public int getUserId() {
-        return userId;
-    }
 
-    public void setUserId(int userId) {
-        this.userId = userId;
-    }
-
-    public int getLibraryId() {
-        return libraryId;
-    }
-
-    public void setLibraryId(int libraryId) {
-        this.libraryId = libraryId;
-    }
 }

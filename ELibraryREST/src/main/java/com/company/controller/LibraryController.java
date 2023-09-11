@@ -58,13 +58,15 @@ public class LibraryController {
         }
     }
     @PostMapping("/library")
-    public ResponseEntity<String> addLibrary(LibraryDTO libraryDTO){
+    public ResponseEntity<String> addLibrary(@RequestBody LibraryDTO libraryDTO, @RequestParam("password") String password){
         try {
             LibraryEntity library=new LibraryEntity();
-            library.setPassword(libraryDTO.getPassword());
-            library.setEmail(library.getEmail());
-            library.setAddress(library.getAddress());
-            library.setName(library.getName());
+            library.setName(libraryDTO.getName());
+            System.out.println(libraryDTO.getName());
+            library.setAddress(libraryDTO.getAddress());
+            library.setEmail(libraryDTO.getEmail());
+
+            libraryService.addLibrary(library, password);
             return ResponseEntity.ok("success");
         }catch (Exception ex){
             ex.printStackTrace();

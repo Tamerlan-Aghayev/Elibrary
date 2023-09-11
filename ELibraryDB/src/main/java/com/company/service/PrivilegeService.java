@@ -25,7 +25,12 @@ public class PrivilegeService {
     public PrivilegeEntity getByUsername(String username){
         return privilegeRepository.getByUsername(username);
     }
-
+    public void addPrivilege(PrivilegeEntity privilegeEntity){
+        privilegeRepository.saveAndFlush(privilegeEntity);
+    }
+    public void deletePrivilege(PrivilegeEntity privilegeEntity){
+        privilegeRepository.delete(privilegeEntity);
+    }
 
 
 }

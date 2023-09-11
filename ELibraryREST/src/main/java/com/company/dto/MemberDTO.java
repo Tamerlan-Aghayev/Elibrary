@@ -19,7 +19,7 @@ public class MemberDTO {
         this.fin=entity.getFin();
         this.username=entity.getUsername();
         this.address=entity.getAddress();
-        this.password=entity.getPassword();
+
     }
 
     public String getName() {
