@@ -5,48 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="371330f6-3040-4cb8-b1e7-81a91afdbce3" name="Changes" comment="new one">
-      <change afterPath="$PROJECT_DIR$/ELibraryREST/src/main/java/com/company/controller/AdminController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ELibraryREST/src/main/java/com/company/data/BookLibraryData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ELibraryREST/src/main/java/com/company/data/UserLibraryData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ELibraryREST/src/main/java/com/company/dto/BookInLibraryDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ELibraryREST/src/main/java/com/company/security/AuthorizationServerConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ELibraryREST/src/main/java/com/company/security/CustomUserDetailsServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ELibraryREST/src/main/java/com/company/security/ResourceServerConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ELibraryREST/src/main/java/com/company/security/SecurityConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.0/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.0/checksums/checksums.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.0/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.0/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.0/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.0/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.0/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.0/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.0/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.0/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.0/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.0/fileHashes/resourceHashesCache.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ELibraryDB/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/ELibraryDB/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ELibraryDB/src/main/java/com/company/ELibraryDbApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/ELibraryDB/src/main/java/com/company/ELibraryDbApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ELibraryDB/src/main/java/com/company/entity/AdminEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/ELibraryDB/src/main/java/com/company/entity/AdminEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ELibraryDB/src/main/java/com/company/entity/LibraryEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/ELibraryDB/src/main/java/com/company/entity/LibraryEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ELibraryDB/src/main/java/com/company/entity/UserEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/ELibraryDB/src/main/java/com/company/entity/UserEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ELibraryDB/src/main/java/com/company/entity/UserLibraryEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/ELibraryDB/src/main/java/com/company/entity/UserLibraryEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ELibraryDB/src/main/java/com/company/repository/AdminRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/ELibraryDB/src/main/java/com/company/repository/AdminRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ELibraryDB/src/main/java/com/company/repository/LibraryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/ELibraryDB/src/main/java/com/company/repository/LibraryRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ELibraryDB/src/main/java/com/company/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/ELibraryDB/src/main/java/com/company/repository/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ELibraryDB/src/main/java/com/company/service/AdminService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ELibraryDB/src/main/java/com/company/service/AdminService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ELibraryDB/src/main/java/com/company/service/BookService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ELibraryDB/src/main/java/com/company/service/BookService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ELibraryDB/src/main/java/com/company/service/LibraryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ELibraryDB/src/main/java/com/company/service/LibraryService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ELibraryDB/src/main/java/com/company/service/PrivilegeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ELibraryDB/src/main/java/com/company/service/PrivilegeService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ELibraryDB/src/main/java/com/company/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ELibraryDB/src/main/java/com/company/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ELibraryREST/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/ELibraryREST/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ELibraryREST/src/main/java/com/company/controller/BookController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ELibraryREST/src/main/java/com/company/controller/BookController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ELibraryREST/src/main/java/com/company/controller/LibraryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ELibraryREST/src/main/java/com/company/controller/LibraryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ELibraryREST/src/main/java/com/company/controller/PrivilegeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ELibraryREST/src/main/java/com/company/controller/PrivilegeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ELibraryREST/src/main/java/com/company/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ELibraryREST/src/main/java/com/company/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ELibraryREST/src/main/java/com/company/dto/BookDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/ELibraryREST/src/main/java/com/company/dto/BookDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ELibraryREST/src/main/java/com/company/dto/LibraryDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/ELibraryREST/src/main/java/com/company/dto/LibraryDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ELibraryREST/src/main/java/com/company/dto/MemberDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/ELibraryREST/src/main/java/com/company/dto/MemberDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ELibraryREST/src/main/java/com/company/dto/UserDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/ELibraryREST/src/main/java/com/company/dto/UserDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ELibraryREST/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/ELibraryREST/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ELibraryREST/src/main/java/com/company/security/ResourceServerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/ELibraryREST/src/main/java/com/company/security/ResourceServerConfig.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,35 +65,36 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;JPA.DatabaseSchemaImportDialog&quot;: &quot;c1fb37ca-be18-4da8-bfc6-b921f61d4c46&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/opt/java_projects/Elibrary&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.appearance&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;fd35f0f9f233a6778bdd233c066e13cb&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "JPA.DatabaseSchemaImportDialog": "c1fb37ca-be18-4da8-bfc6-b921f61d4c46",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/opt/java_projects/elibrary/Elibrary",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "configurable.group.appearance",
+    "spring.configuration.checksum": "e217c8a3e3da8adb22d9a9010e3a3f7f",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;postgresql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="ImportMappingsDialog.RecentPackages">
       <recent name="com.company.entity" />
@@ -214,6 +177,9 @@
       <workItem from="1694093417384" duration="1685000" />
       <workItem from="1694254452867" duration="5629000" />
       <workItem from="1694420333050" duration="15954000" />
+      <workItem from="1694446971973" duration="38000" />
+      <workItem from="1694447068959" duration="37000" />
+      <workItem from="1694563142952" duration="556000" />
     </task>
     <task id="LOCAL-00001" summary="new one">
       <option name="closed" value="true" />

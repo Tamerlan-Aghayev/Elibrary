@@ -2,6 +2,7 @@ package com.company.security;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableResourceServer;
 import org.springframework.security.oauth2.config.annotation.web.configuration.ResourceServerConfigurerAdapter;
@@ -37,6 +38,10 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
                 .and()
                 .authorizeRequests().antMatchers("/login").permitAll()
                 .and()
+                .authorizeRequests().antMatchers("/book_available").hasAnyAuthority( "LIBRARY")
+                .and()
+                .authorizeRequests().antMatchers("/book_unavailable").hasAnyAuthority( "LIBRARY")
+                .and()
                 .authorizeRequests().antMatchers("/users").hasAnyAuthority( "LIBRARY")
                 .and()
                 .authorizeRequests().antMatchers("/user").hasAnyAuthority("LIBRARY")
@@ -51,9 +56,9 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
                 .and()
                 .authorizeRequests().antMatchers("/library_name").hasAnyAuthority("ADMIN", "USER")
                 .and()
-                .authorizeRequests().antMatchers("/library").hasAnyAuthority( "LIBRARY", "ADMIN")
+                .authorizeRequests().antMatchers(HttpMethod.DELETE, "/library").hasAnyAuthority(  "ADMIN")
                 .and()
-                .authorizeRequests().antMatchers("/library").hasAnyAuthority( "LIBRARY", "ADMIN")
+                .authorizeRequests().antMatchers(HttpMethod.POST,"/library").hasAnyAuthority( "LIBRARY", "ADMIN")
                 .and()
                 .authorizeRequests().antMatchers("/books").hasAnyAuthority( "LIBRARY", "ADMIN")
                 .and()
