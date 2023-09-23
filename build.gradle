@@ -17,8 +17,10 @@ subprojects {
 
 }
 bootJar {
-    enabled = false // Disable the default bootJar task
+    archiveBaseName = 'devops-integration'
+    // Disable the default bootJar task
 }
+bootJar.enabled = false
 //configure(subprojects.findAll { it.name == 'ELibraryDB' }) {
 //    bootJar {
 //        // Configure module1's mainClassName
